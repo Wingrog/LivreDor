@@ -9,25 +9,20 @@
     <input type="text" class="form-control" name="titre" id="titre" required [(ngModel)]="livres.titre"
       #titre="ngModel">
 
-    <label for="description">Renseigner une description du message</label>
+    <!-- ON AFFICHE UNE DIV POUR DIRE QUE DES CHOIX SONT OBLIGATOIRES -->
+    <div [hidden]="messageForm.valid" class="alert alert-danger">
+      Le titre est obligatoire
+    </div>
+
+    <label for="description">Renseigner une description du message (optionnel)</label>
     <input type="text" class="form-control" name="description" id="description" [(ngModel)]="livres.description">
 
     <label for="image">Renseigner une image (mettre le lien complet)</label>
-    <input type="text" class="form-control" name="image" id="image" required [(ngModel)]="livres.image"
-      #image="ngModel">
-
-
-
-    <!-- ON AFFICHE UNE DIV POUR DIRE QUE TOUS LES CHOIX SONT OBLIGATOIRES -->
-    <div [hidden]="messageForm.valid" class="alert alert-danger">
-      Tous les champs sont obligatoire
-    </div>
+    <input type="text" class="form-control" name="image" id="image" [(ngModel)]="livres.image">
 
     <input [disabled]="!messageForm.valid" type="submit" value="Envoyer">
   </form>
 </div>
-
-
 
 <div *ngIf="isLoading">
   <p>Traitement des données....</p>
