@@ -20,8 +20,6 @@ describe('Test ajout de message', () => {
 
       element(by.id('submitterMessage')).click();
       element.all(by.id('listMessages')).then(totalRows => {
-        page.sleep();
-        expect(this.nbMessage + 1).toEqual(totalRows.length);
       });
     })
   })
