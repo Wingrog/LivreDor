@@ -10,7 +10,7 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let livre of this.livres">
+      <tr class="listMessages" *ngFor="let livre of this.livres">
         <td>{{ livre.titre }}</td>
         <td><button class="btn btn-warning" [routerLink]="['/livre', livre.id]">Voir le message</button></td>
       </tr>

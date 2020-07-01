@@ -13,7 +13,7 @@ export class livredor {
     let image = element.all(by.id('test'));
 
     titre.sendKeys('poiuytreza');
-    description.sendKeys(100);
-    image.sendKeys(300);
+    description.sendKeys('jfjdfjf');
+    image.sendKeys('hjkfhjk');
   }
 }

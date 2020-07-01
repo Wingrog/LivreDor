@@ -20,7 +20,7 @@
     <label for="image">Renseigner une image (mettre le lien complet)</label>
     <input type="text" class="form-control" name="image" id="image" [(ngModel)]="livres.image">
 
-    <input [disabled]="!messageForm.valid" type="submit" value="Envoyer">
+    <input [disabled]="!messageForm.valid" type="submit" value="Envoyer" id="submitterMessage">
   </form>
 </div>
 
