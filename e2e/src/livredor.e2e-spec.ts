@@ -3,10 +3,11 @@ import { LivredorPage } from './livredor.po';
 
 
 describe('Test ajout de message', () => {
-
-
   let page: LivredorPage;
-  let nbMessage: number;
+  beforeEach(() => {
+    page = new LivredorPage();
+    browser.get('/livre/add');
+  });
 
 
   // POUR TESTER L'AJOUT DUN MESSAGE
