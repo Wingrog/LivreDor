@@ -1,11 +1,11 @@
 import { browser, element, logging, by } from 'protractor';
-import { livredor } from './livredor.po';
+import { LivredorPage } from './livredor.po';
 
 
 describe('Test ajout de message', () => {
 
 
-  let page: livredor;
+  let page: LivredorPage;
   let nbMessage: number;
 
 

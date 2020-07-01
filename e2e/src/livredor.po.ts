@@ -1,7 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 
-export class livredor {
+export class LivredorPage {
 
   sleep() {
     browser.driver.sleep(5000);
