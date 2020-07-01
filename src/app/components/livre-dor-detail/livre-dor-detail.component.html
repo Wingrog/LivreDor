@@ -4,12 +4,11 @@
     <button class="btn btn-primary" [routerLink]="['/livre/update', livres.id]">Editer le message</button>
     <button class="btn btn-danger" (click)="deleteMessage(livres.id)">Supprimer le message</button>
   </div><br><br>
-  <h1>{{livres.titre}} :</h1><br>
+  <h1>{{livres.titre}}</h1><br>
   <h4>{{livres.description}}</h4><br>
   <img src="{{livres.image}}" alt="{{livres.image}}"><br><br>
   <h6>Message posté le : {{livres.dateAjout | date:'dd/MM/yyyy'}}</h6><br>
-</div>
 
 
-<div *ngIf="isloading">
-  <p>Chargement des données....</p>
+  <div *ngIf="isloading">
+    <p>Chargement des données....</p>
