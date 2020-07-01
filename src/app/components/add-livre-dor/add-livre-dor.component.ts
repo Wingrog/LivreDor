@@ -35,7 +35,7 @@ export class AddLivreDorComponent implements OnInit {
     this.livreDorService.addMessage(this.livres).subscribe(then => {
       this.isLoading = false;
       this.router.navigate(['/home']); // Redirection de l'utilisateur
-      this.toastr.success("L'annonce bien été ajoutée !"); // On affiche une notification
+      this.toastr.success("Le message à bien été ajoutée !"); // On affiche une notification
     });
   }
 

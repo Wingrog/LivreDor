@@ -6,13 +6,6 @@
       "description": "Ceci est une photo linkedin",
       "image": "https://transfert-exam.s3.eu-central-1.amazonaws.com/charlene.jpg",
       "dateAjout": "2012-04-23T18:25:43.511Z"
-    },
-    {
-      "id": 2,
-      "titre": "Testouille",
-      "description": "Blablabla Pouki",
-      "image": "https://transfert-exam.s3.eu-central-1.amazonaws.com/charlene.jpg",
-      "dateAjout": "2020-07-01T11:47:50.585Z"
     }
   ]
 }
