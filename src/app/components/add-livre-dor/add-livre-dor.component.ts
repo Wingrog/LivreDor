@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { LivreDor } from 'src/app/models/livre-dor';
+import { LivreDorService } from 'src/app/services/livre-dor.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-livre-dor',
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddLivreDorComponent implements OnInit {
 
-  constructor() { }
+  chaussure = new LivreDor();
+
+  // LE SELECT POUR LE FORMULAIRE
+
+  typeMarque = ['Adiddas', 'Nike', 'Puma']; // pour le input radio
+  typeChaussure = ['Sport', 'Ville', 'Football']; //pour les inputs select
+
+
+  isLoading: boolean;
+  livres = new LivreDor();
+
+
+  constructor(private livreDorService: LivreDorService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+
+  // ENVOI DES DONNEES SUR SERVEUR BACK END
+  submitMessage(): void {
+    this.isLoading = true;
+    this.livreDorService.addMessage(this.livres).subscribe(then => {
+      this.isLoading = false;
+      this.router.navigate(['/home']); // Redirection de l'utilisateur
+      this.toastr.success("L'annonce bien été ajoutée !"); // On affiche une notification
+    });
   }
 
 }

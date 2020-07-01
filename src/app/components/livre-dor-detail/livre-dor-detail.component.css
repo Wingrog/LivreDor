@@ -1,0 +1,13 @@
+img {
+  width: 600px;
+}
+
+.btnMenu {
+  display: flex;
+  justify-content: center;
+}
+
+
+button {
+  margin-right: 1rem;
+}

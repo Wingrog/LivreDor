@@ -9,6 +9,11 @@ import { LivreDorComponent } from './components/livre-dor/livre-dor.component';
 import { EditLivreDorComponent } from './components/edit-livre-dor/edit-livre-dor.component';
 import { AddLivreDorComponent } from './components/add-livre-dor/add-livre-dor.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { LivreDorDetailComponent } from './components/livre-dor-detail/livre-dor-detail.component';
+
+import { HttpClientModule } from '@angular/common/http'; //pour se connecter au json
+import { FormsModule } from '@angular/forms'; //pour utiliser les formulaires;
+import { ToastrModule } from 'ngx-toastr'; //pour utiliser les notifications avec le ToastrModule
 
 @NgModule({
   declarations: [
@@ -17,12 +22,17 @@ import { MenuComponent } from './components/menu/menu.component';
     LivreDorComponent,
     EditLivreDorComponent,
     AddLivreDorComponent,
-    MenuComponent
+    MenuComponent,
+    LivreDorDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule, //pour utiliser les formulaires
+    ToastrModule.forRoot(), //pour utiliser les notifications
+    HttpClientModule, //pour le back end
+
   ],
   providers: [],
   bootstrap: [AppComponent]

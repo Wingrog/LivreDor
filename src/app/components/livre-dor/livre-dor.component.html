@@ -1,1 +1,31 @@
-<p>livre-dor works!</p>
+<div *ngIf="!isLoading">
+
+  <h4>Nombre de message enregistrés : {{livres.length}}</h4>
+
+  <button class="btn btn-danger" routerLink="/livre/add">Ajouter un message</button>
+
+  <table class="table table-dark">
+    <thead>
+      <th>ID</th>
+      <th>Titre</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Date d'ajout</th>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let livre of this.livres">
+        <td>{{ livre.id }}</td>
+        <td>{{ livre.titre }}</td>
+        <td>{{ livre.description }}</td>
+        <td><img src="{{ livre.image }}" alt="{{livre.description}}"></td>
+        <td>{{livre.dateAjout | date: 'dd/MM/yyyy'}}</td>
+
+        <td><button class="btn btn-warning" [routerLink]="['/livre', livre.id]">En savoir plus</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="isLoading">
+  <p>Traitement des données....</p>
+</div>

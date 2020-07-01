@@ -1,1 +1,34 @@
-<p>edit-livre-dor works!</p>
+<div *ngIf="!isLoading">
+  <h1>Ajouter un message</h1>
+
+  <form #messageForm="ngForm" (ngSubmit)="editMessage()">
+
+    <!-- EN UTILISANT UN INPUT TEXT -->
+
+    <label for="titre">Renseigner le titre du message</label>
+    <input type="text" class="form-control" name="titre" id="titre" required [(ngModel)]="livres.titre"
+      #titre="ngModel">
+
+    <label for="description">Renseigner une description du message</label>
+    <input type="text" class="form-control" name="description" id="description" [(ngModel)]="livres.description">
+
+    <label for="image">Renseigner une image (mettre le lien complet)</label>
+    <input type="text" class="form-control" name="image" id="image" required [(ngModel)]="livres.image"
+      #image="ngModel">
+
+
+
+    <!-- ON AFFICHE UNE DIV POUR DIRE QUE TOUS LES CHOIX SONT OBLIGATOIRES -->
+    <div [hidden]="messageForm.valid" class="alert alert-danger">
+      Tous les champs sont obligatoire
+    </div>
+
+    <input [disabled]="!messageForm.valid" type="submit" value="Envoyer">
+  </form>
+</div>
+
+
+
+<div *ngIf="isLoading">
+  <p>Traitement des données....</p>
+</div>
