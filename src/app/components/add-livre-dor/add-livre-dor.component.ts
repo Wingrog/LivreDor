@@ -11,14 +11,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddLivreDorComponent implements OnInit {
 
-  chaussure = new LivreDor();
-
-  // LE SELECT POUR LE FORMULAIRE
-
-  typeMarque = ['Adiddas', 'Nike', 'Puma']; // pour le input radio
-  typeChaussure = ['Sport', 'Ville', 'Football']; //pour les inputs select
-
-
   isLoading: boolean;
   livres = new LivreDor();
 
